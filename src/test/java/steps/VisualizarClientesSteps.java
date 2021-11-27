@@ -1,6 +1,7 @@
 package steps;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
@@ -15,9 +16,13 @@ public class VisualizarClientesSteps {
 
     private static WebDriver driver;
 
+    @Before
+    public void initializar(){
+        driver = new ChromeDriver();
+    }
+
     @Dado("que estou na pagina inicial")
     public void que_estou_na_pagina_inicial() {
-        driver = new ChromeDriver();
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://localhost:3000/clients");
     }
