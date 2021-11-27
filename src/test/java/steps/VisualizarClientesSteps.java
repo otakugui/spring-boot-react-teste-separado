@@ -17,7 +17,7 @@ public class VisualizarClientesSteps {
     private static WebDriver driver;
 
     @Before
-    public void initializar(){
+    public void inicializar(){
         driver = new ChromeDriver();
     }
 
